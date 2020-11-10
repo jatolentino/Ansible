@@ -1,0 +1,18 @@
+----
+- name: Encrypted user
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+      - name: create user
+        user:
+             name: '{{ user_name }}'
+             password: " {{ 'mypass' | password_hash('sha512','usrx15')}} "
+             update_password: on_create
+        when: user_create=='yes'
+      - name: create user
+        user:
+             name: '{{ user_name }}'
+             state: 'absent'
+             remove: true
+        when:user_create=='no'
