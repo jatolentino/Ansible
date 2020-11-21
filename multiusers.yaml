@@ -1,0 +1,15 @@
+---
+- name: Create user
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+      - name: create user
+        user:
+             name: '{{ item }}'
+             state: 'absent'
+             remove: true
+        loop:
+           - user1
+           - user2
+           - user3
