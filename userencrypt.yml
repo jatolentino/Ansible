@@ -7,6 +7,7 @@
       - name: create user
         user:
              name: '{{ user_name }}'
+             # encription here
              password: " {{ 'mypass' | password_hash('sha512','usrx15')}} "
              update_password: on_create
         when: user_create=='yes'
