@@ -1,0 +1,60 @@
+---
+- name: play1
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: part1
+      parted:
+        device: /dev/sdb
+        part_start: 0%
+        part_end: 40%
+        number: 1
+        state: present
+    - name: part2
+      parted:
+        device: /dev/sdb
+        part_start: 40%
+        part_end: 100%
+        number: 2
+        state: present
+        flags: [ lvm ]
+    - name: vg
+      lvg:
+        vg: vg1
+        pvs: /dev/sdb2
+    - name: lv
+      lvol:
+        lv: lv1
+        vg: vg1
+        size: 100%FREE
+        shrink: false
+        
+    - name:sdb1
+      filesystem:
+        fstype: xfs
+        dev: /dev/vg1/lv1
+    - name: lv
+      filesystem:
+        fstype: xfs
+        dev: /dev/vg1/lv1
+    - name: dir1
+      file:
+        path: "{{ item }}"
+        state: directory
+      loop:
+        - /resources
+        - /resource/infrastructure
+        - /resources/technology
+    - name: mount sales
+      mount:
+        path: /resource/infrastructure
+        src: /dev/sdb1
+        fstype: xfs
+        state: mounted
+    - name: mount mkt
+      mount:
+        path: /resources/technology
+        src: /dev/vg1/lv1
+        fstype: xfs
+        state: mounted
