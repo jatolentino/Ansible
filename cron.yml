@@ -1,0 +1,22 @@
+---
+- name: playbook CRON AT
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: cron
+      cron:
+        name: mycron entry
+        hour: 11
+        minute: 25
+        job: 'cat /etc/passwd > /tmp/file1'
+        user: root
+        cron_file: my_cron
+    - name: at entry
+      at:
+        command: 'find /usr/share/doc -name "*.txt" -exec cp {} /tmp/ \;'
+        count: 1
+        units: minutes
+        unique: true
+        
+# /etc/cron.d/my_cron
