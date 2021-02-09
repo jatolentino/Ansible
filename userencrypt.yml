@@ -16,4 +16,4 @@
         name: '{{ user_name }}'
         state: 'absent'
         remove: true
-       when:user_create=='no'
+      when: user_create=='no'
