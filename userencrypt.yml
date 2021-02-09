@@ -4,8 +4,8 @@
   become: true
   gather_facts: false
   tasks:
-      - name: create user
-        user:
+    - name: create user
+      user:
              name: '{{ user_name }}'
              # encription here
              password: " {{ 'mypass' | password_hash('sha512','usrx15')}} "
