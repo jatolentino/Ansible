@@ -14,6 +14,10 @@
         update_password: on_create
       when: user_create == 'yes'
     - name: remove the user
+      user:
+        name: "{{ user_name }}"
+        state: absent
+        
   
   # Run with
   # ansible-playbook --ask-vault-pass -e "user_name=joe" encrypted.yml
