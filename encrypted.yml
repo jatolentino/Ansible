@@ -12,6 +12,7 @@
         name: " {{ user_name }} "
         password: "{{ user_password | password_hash('sha512', 'AS343') }}"
         update_password: on_create
+      when: user_create == 
   
   # Run with
   # ansible-playbook --ask-vault-pass -e "user_name=joe" encrypted.yml
