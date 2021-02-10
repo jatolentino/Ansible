@@ -22,5 +22,5 @@
         
   
   # Run with
-  # ansible-playbook --ask-vault-pass -e "user_name=joe" encrypted.yml
+  # ansible-playbook --ask-vault-pass -e "user_name=joe user_create=yes" encrypted.yml
   
