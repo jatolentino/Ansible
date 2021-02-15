@@ -28,8 +28,7 @@
         lv: lv1
         vg: vg1
         size: 100%FREE
-        shrink: false
-        
+        shrink: false  
     - name:sdb1
       filesystem:
         fstype: xfs
