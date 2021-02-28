@@ -21,5 +21,11 @@ vim aws.yml
             - pinfo
             - firewalld
           state: latest
-
-            state: restarted
+      - name: Authentication
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: '^PasswordAuthentication'
+          line: 'PasswordAuthentication yes'
+          insertafter: '#PasswordAuthentication yes'
+        notify: restart_sshd
+      
