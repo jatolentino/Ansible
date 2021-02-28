@@ -1,0 +1,12 @@
+vim aws.yml
+---
+  - name: play
+    hosts: all
+    become: true
+    gather_facts: false
+    tasks:
+      - name: tux
+        user:
+          name: tux
+          groups: wheel
+          password: "{{ 'Password1' | password_hash('sha512, 'SALT') }}"
