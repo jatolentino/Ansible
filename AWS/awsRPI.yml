@@ -28,4 +28,10 @@ vim aws.yml
           line: 'PasswordAuthentication yes'
           insertafter: '#PasswordAuthentication yes'
         notify: restart_sshd
+      handlers:
+              - name: restart_sshd
+                systemd:
+                  name: sshd
+                  state: restarted
+
       
