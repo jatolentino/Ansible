@@ -10,3 +10,16 @@ vim aws.yml
           name: tux
           groups: wheel
           password: "{{ 'Password1' | password_hash('sha512, 'SALT') }}"
+      - name: install
+        package:
+          name:
+            - at
+            - vim
+            - bash-completion
+            - nano
+            - tree
+            - pinfo
+            - firewalld
+          state: latest
+
+            state: restarted
