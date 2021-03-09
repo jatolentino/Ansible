@@ -7,8 +7,8 @@
     - name: cron
       cron:
         name: mycron entry
-        hour: 11'
-        minute: 25
+        hour: '11'
+        minute: '25'
         job: 'cat /etc/passwd > /tmp/file1'
         user: root
         cron_file: my_cron
