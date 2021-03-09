@@ -1,5 +1,5 @@
 ---
-- name: Create user
+- name: Create users only in some nodes
   hosts: all
   become: true
   gather_facts: false
@@ -13,3 +13,4 @@
            - user1
            - user2
            - user3
+        when: ('node1' in group_names)
