@@ -13,4 +13,4 @@
            - user1
            - user2
            - user3
-        when: (user1 is defined or user2 is defined or user3 is defines and (('node1' in group_names) or ('node2' in group_names))
+        when: ((user1 is defined) or (user2 is defined) or (user3 is defined)) and (('node1' in group_names) or ('node2' in group_names))
