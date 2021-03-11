@@ -11,25 +11,25 @@
       lineinfile:
         path: /root/information.txt
         regex: ^HOST
-        line:
+        line: HOST={{ ansible_fqdn }}
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
         regex: ^MEMORY
-        line:
+        line: MEMORY={{ ansible_memtotal_mb }}
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
         regex: ^BIOS
-        line:
+        line: BIOS={{ ansible_bios_version }}
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
         regex: ^VDA_DEVICE_SIZE
-        line:
+        line: VDA_DISK_SIZE={%if ansible 
         state: present
     - name: name of host
       lineinfile:
