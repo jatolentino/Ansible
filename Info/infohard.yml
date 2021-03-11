@@ -29,12 +29,12 @@
       lineinfile:
         path: /root/information.txt
         regex: ^VDA_DEVICE_SIZE
-        line: VDA_DISK_SIZE={%if ansible 
+        line: VDA_DISK_SIZE={%if ansible_devices.vda is defined%} {{ ansible_devices.vda.size }} {%else%} NONE {%endif%}
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
         regex: ^VDB_DEVICE_SIZE
-        line:
+        line: VDB_DISL_SIZE={%if ansible_devices.vda is defined%} {{ ansible_devices.vdb.size }} {%else%} NONE {%endif%}
         state: present
   
