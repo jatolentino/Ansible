@@ -1,0 +1,34 @@
+--- 
+- name: Information about this software
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: generate file info
+      copy: 
+        src: datahard.txt
+        dest: /root/information.txt
+    - name: name of host
+      lineinfile:
+        path: /root/information.txt
+        regex: ^
+        line:
+        state: present
+    - name: name of host
+      lineinfile:
+        path: /root/information.txt
+        regex: ^
+        line:
+        state: present
+    - name: name of host
+      lineinfile:
+        path: /root/information.txt
+        regex: ^
+        line:
+        state: present
+    - name: name of host
+      lineinfile:
+        path: /root/information.txt
+        regex: ^
+        line:
+        state: present
+  
