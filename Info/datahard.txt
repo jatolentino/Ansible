@@ -1,0 +1,5 @@
+HOST= hostanme
+MEMORY= memory of pc
+BIOS= version
+VDB_DISK_SIZE= size of vdb partition
+VDA_DISK_SIZE= size of sda partition
