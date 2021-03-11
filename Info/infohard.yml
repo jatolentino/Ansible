@@ -10,31 +10,31 @@
     - name: name of host
       lineinfile:
         path: /root/information.txt
-        regex: ^
+        regex: ^HOST
         line:
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
-        regex: ^
+        regex: ^MEMORY
         line:
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
-        regex: ^
+        regex: ^BIOS
         line:
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
-        regex: ^
+        regex: ^VDA_DEVICE_SIZE
         line:
         state: present
     - name: name of host
       lineinfile:
         path: /root/information.txt
-        regex: ^
+        regex: ^VDB_DEVICE_SIZE
         line:
         state: present
   
