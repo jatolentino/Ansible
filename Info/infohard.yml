@@ -31,4 +31,10 @@
         regex: ^
         line:
         state: present
+    - name: name of host
+      lineinfile:
+        path: /root/information.txt
+        regex: ^
+        line:
+        state: present
   
