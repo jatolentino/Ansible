@@ -33,4 +33,3 @@ vim aws.yml
           systemd:
             name: sshd
             state: restarted
-
