@@ -9,7 +9,7 @@ vim aws.yml
         user:
           name: tux
           groups: wheel
-          password: "{{ 'Password1' | password_hash('sha512}}"
+          password: "{{ 'Password1' | password_hash('sha512') }}"
       - name: install
         package:
           name: "{{ item }}"
