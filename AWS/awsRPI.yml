@@ -19,7 +19,9 @@ vim aws.yml
           - vim
           - bash-completion
           - nano
-
+          - tree
+          - pinfo
+          - firewalld
       - name: Authentication
         lineinfile:
           path: /etc/ssh/sshd_config
