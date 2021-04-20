@@ -20,7 +20,7 @@
         remove: true
       when: user_create == 'no'
         
-  
+
   # Run with
   # ansible-playbook --ask-vault-pass -e "user_name=joe user_create=yes" encrypted.yml
   
