@@ -19,5 +19,5 @@
         units: minutes
         unique: true
         
-# /etc/cron.d/my_cron
+# check in: /etc/cron.d/my_cron
 # crontab -l
