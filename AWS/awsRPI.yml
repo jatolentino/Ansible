@@ -5,9 +5,9 @@ vim aws.yml
     become: true
     gather_facts: false
     tasks:
-      - name: tux
+      - name: user
         user:
-          name: tux
+          name: user
           groups: wheel
           password: "{{ 'Password1' | password_hash('sha512') }}"
       - name: install
